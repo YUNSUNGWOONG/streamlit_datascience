@@ -1,5 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import poisson
 import pandas as pd
@@ -36,7 +36,7 @@ st.write('(푸아송 분포는 특히 독립적인 사건들이 고정된 비율
 
 
 #diagram(1)
-plt.rc('font', family='Malgun Gothic')
+#plt.rc('font', family='Malgun Gothic')
 
 # Load data
 df = pd.read_csv('lotto-3.csv', encoding='cp949', index_col=False)
@@ -75,31 +75,31 @@ for government_name, government_data in governments.items():
 
 st.write(government_view)
 
-#diagram(2)
-st.write('### ※평균 1등 당첨자 수가 3명, 5명, 6명, 8명, 10명일때의 푸아송분포')
-# Set up the plot
-fig, ax = plt.subplots()
-ax.set_ylim(0, 0.3)
-ax.set_xlim(0, 15)
-ax.set_title("Poisson distribution")
-ax.set_xlabel("x")
-ax.set_ylabel("p(x)")
-
-# Values of lambda
-lambdas = [3, 5, 6, 8, 10, 13]
-
-#Plot Poisson distributions for different lambdas
-for i in range(5):
-    x = np.arange(0, 15)
-    y = poisson.pmf(x, lambdas[i])
-
-    ax.plot(x, y, marker='o', linestyle='-', color=plt.cm.rainbow(i / 5.0))
-
-    # Add vertical line at lambda
-    ax.axvline(x=lambdas[i], color=plt.cm.rainbow(i / 5.0), linestyle='--')
-
-    # Add label for lambda
-    ax.text(lambdas[i], np.max(y) + 0.01, f"lambda={lambdas[i]}", color=plt.cm.rainbow(i / 5.0))
-
-# Show the plot in Streamlit app
-st.pyplot(fig)
+# #diagram(2)
+# st.write('### ※평균 1등 당첨자 수가 3명, 5명, 6명, 8명, 10명일때의 푸아송분포')
+# # Set up the plot
+# fig, ax = plt.subplots()
+# ax.set_ylim(0, 0.3)
+# ax.set_xlim(0, 15)
+# ax.set_title("Poisson distribution")
+# ax.set_xlabel("x")
+# ax.set_ylabel("p(x)")
+# 
+# # Values of lambda
+# lambdas = [3, 5, 6, 8, 10, 13]
+#
+# #Plot Poisson distributions for different lambdas
+# for i in range(5):
+#     x = np.arange(0, 15)
+#     y = poisson.pmf(x, lambdas[i])
+#
+#     ax.plot(x, y, marker='o', linestyle='-', color=plt.cm.rainbow(i / 5.0))
+#
+#     # Add vertical line at lambda
+#     ax.axvline(x=lambdas[i], color=plt.cm.rainbow(i / 5.0), linestyle='--')
+#
+#     # Add label for lambda
+#     ax.text(lambdas[i], np.max(y) + 0.01, f"lambda={lambdas[i]}", color=plt.cm.rainbow(i / 5.0))
+#
+# # Show the plot in Streamlit app
+# st.pyplot(fig)
