@@ -89,17 +89,17 @@ ax.set_ylabel("p(x)")
 lambdas = [3, 5, 6, 8, 10, 13]
 
 # Plot Poisson distributions for different lambdas
-for i in range(5):
-    x = np.arange(0, 15)
-    y = poisson.pmf(x, lambdas[i])
-
-    ax.plot(x, y, marker='o', linestyle='-', color=plt.cm.rainbow(i / 5.0))
-
-    # Add vertical line at lambda
-    ax.axvline(x=lambdas[i], color=plt.cm.rainbow(i / 5.0), linestyle='--')
-
-    # Add label for lambda
-    ax.text(lambdas[i], np.max(y) + 0.01, f"lambda={lambdas[i]}", color=plt.cm.rainbow(i / 5.0))
-
-# Show the plot in Streamlit app
-st.pyplot(fig)
+# for i in range(5):
+#     x = np.arange(0, 15)
+#     y = poisson.pmf(x, lambdas[i])
+#
+#     ax.plot(x, y, marker='o', linestyle='-', color=plt.cm.rainbow(i / 5.0))
+#
+#     # Add vertical line at lambda
+#     ax.axvline(x=lambdas[i], color=plt.cm.rainbow(i / 5.0), linestyle='--')
+#
+#     # Add label for lambda
+#     ax.text(lambdas[i], np.max(y) + 0.01, f"lambda={lambdas[i]}", color=plt.cm.rainbow(i / 5.0))
+#
+# # Show the plot in Streamlit app
+# st.pyplot(fig)
